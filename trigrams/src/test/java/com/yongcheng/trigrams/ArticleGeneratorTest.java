@@ -19,7 +19,7 @@ public class ArticleGeneratorTest {
 	private IPairWordsProcessor pairWordsProcessor;
 
 	@Test
-	public void test() {
+	public void test_that_generate_method_generated_a_right_report() {
 
 		// --Arrange
 		when(this.pairWordsProcessor.getRandomLeft()).thenReturn("I may");

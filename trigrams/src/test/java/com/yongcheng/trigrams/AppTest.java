@@ -1,38 +1,23 @@
 package com.yongcheng.trigrams;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+public class AppTest {
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+	private App underTest = new App();
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+	@Test
+	public void test_that_app_generate_a_right_article_using_simpleTestData_txt() {
+
+		String path = "C:\\sandbox\\git\\Java\\trigrams\\src\\main\\java\\com\\yongcheng\\trigrams\\simpleTestData.txt";
+		System.out.println(this.underTest.generateArticle(path));
+
+	}
+
+	@Test
+	public void test_that_app_generate_a_right_article_using_TheVoiceInSingingByEmmaSeiler_txt() {
+
+		String path = "C:\\sandbox\\git\\Java\\trigrams\\src\\main\\java\\com\\yongcheng\\trigrams\\TheVoiceInSingingByEmmaSeiler.txt";
+		System.out.println(this.underTest.generateArticle(path));
+	}
 }

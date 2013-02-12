@@ -33,4 +33,37 @@ public class Pair implements Serializable {
 		this.rigth = rigth;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((this.left == null) ? 0 : this.left.hashCode());
+		result = prime * result
+				+ ((this.rigth == null) ? 0 : this.rigth.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pair other = (Pair) obj;
+		if (this.left == null) {
+			if (other.left != null)
+				return false;
+		} else if (!this.left.equals(other.left))
+			return false;
+		if (this.rigth == null) {
+			if (other.rigth != null)
+				return false;
+		} else if (!this.rigth.equals(other.rigth))
+			return false;
+		return true;
+	}
+
 }

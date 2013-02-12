@@ -26,4 +26,8 @@ public class ArticleGenerator {
 	public String getArticle() {
 		return this.article.toString();
 	}
+
+	public void setPairWordsProcessor(IPairWordsProcessor pairWordsProcessor) {
+		this.pairWordsProcessor = pairWordsProcessor;
+	}
 }

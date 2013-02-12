@@ -7,9 +7,14 @@ import java.util.Set;
 
 public class PairWordsProcessorImpl implements IPairWordsProcessor {
 
-	private IDataSource<Pair> nextWordDataSouce;
+	private final IDataSource<Pair> nextPairDataSource;
 
 	private Map<String, LinkedHashSet<String>> data;
+
+	public PairWordsProcessorImpl(IDataSource<Pair> nextPairDataSource) {
+		super();
+		this.nextPairDataSource = nextPairDataSource;
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -21,7 +26,7 @@ public class PairWordsProcessorImpl implements IPairWordsProcessor {
 
 		Pair pair = null;
 
-		while ((pair = this.nextWordDataSouce.getNext()) != null) {
+		while ((pair = this.nextPairDataSource.getNext()) != null) {
 
 			LinkedHashSet<String> followingWords = this.data
 					.get(pair.getLeft());
